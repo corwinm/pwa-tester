@@ -13,7 +13,7 @@ export default function Notifications() {
       const notification = new Notification("Hi there!");
       notification.onclick = function() {
         // parent.focus();
-        window.focus(); //just in case, older browsers
+        window.focus();
         this.close();
       };
       setTimeout(notification.close.bind(notification), 4000);
@@ -38,12 +38,14 @@ export default function Notifications() {
   };
 
   return (
-    <div className="section">
-      <h1>Test Notification</h1>
-      {permission === "denied" && <div>Permission Denied</div>}
-      <div>
-        <button onClick={requestPermission}>Request Permission</button>
+    <section className="section">
+      <div className="container is-fluid">
+        <h1>Test Notification</h1>
+        {permission === "denied" && <div>Permission Denied</div>}
+        <div>
+          <button onClick={requestPermission}>Request Permission</button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

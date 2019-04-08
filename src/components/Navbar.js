@@ -25,7 +25,7 @@ export default function Navbar() {
           <span aria-hidden="true" />
         </a>
       </div>
-      <div id="navbarBasicExample" className={"navbar-menu" + (menuOpen ? "is-active" : "")}>
+      <div id="navbarBasicExample" className={"navbar-menu " + (menuOpen ? "is-active" : "")}>
         <div className="navbar-start">
           <Link to="/" onClick={toggleMenu} className="navbar-item">Home</Link>
           <Link to="/about" onClick={toggleMenu} className="navbar-item">About</Link>

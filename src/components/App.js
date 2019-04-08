@@ -11,7 +11,7 @@ import Notifications from './Notifications';
 const App = () => {
   return (
     <div className="App">
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Navbar />
 
         <Route exact path="/" component={Home} />
