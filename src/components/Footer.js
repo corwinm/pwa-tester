@@ -1,4 +1,7 @@
 import React from "react";
+import preval from "preval.macro";
+
+const dateTimeStamp = preval`module.exports = new Date().toLocaleString();`
 
 export default function Footer() {
   return (
@@ -10,6 +13,7 @@ export default function Footer() {
           is available on{" "}
           <a href="https://github.com/corwinm/pwa-tester">GitHub</a>
         </p>
+        <p>Built: {dateTimeStamp}</p>
       </div>
     </footer>
   );

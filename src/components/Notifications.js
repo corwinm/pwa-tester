@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function Notifications() {
   const [permission, setPermission] = useState(
-    Notification && Notification.permission
+    ('Notification'in window) && Notification.permission
   );
 
   if (!permission) {
