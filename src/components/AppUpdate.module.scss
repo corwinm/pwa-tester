@@ -1,0 +1,11 @@
+.floatingContainer {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  width: calc(100% - 16px);
+  max-width: 500px;
+}
+
+.withShadow {
+  box-shadow: 0 0 10px black;
+}
