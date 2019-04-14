@@ -6,8 +6,9 @@
 // Set your brand colors
 $purple: #8A4D76;
 $pink: #FA7C91;
-$blue: rgb(124, 200, 250);
-$brown: #757763;
+$light-blue: rgb(27, 156, 248);
+$blue: rgb(5, 93, 158);
+$brown: #cccec1;
 $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
 $black: #000000;
@@ -17,7 +18,7 @@ $family-sans-serif: "Nunito", sans-serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
 $primary: $blue;
-$link: $blue;
+$link: $light-blue;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 $background: $black;
@@ -28,6 +29,7 @@ $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 $navbar-background-color: $black;
+$footer-background-color: $black;
 
 @import "../node_modules/bulma/bulma.sass";
 
