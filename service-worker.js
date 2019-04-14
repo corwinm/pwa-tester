@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/pwa-tester/precache-manifest.538290b3dedacf7272be5ddc32df8992.js"
+  "/pwa-tester/precache-manifest.771333bcc10ffeabe72b8d8f2d016b76.js"
 );
 
 workbox.clientsClaim();
@@ -31,4 +31,10 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 workbox.routing.registerNavigationRoute("/pwa-tester/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
+});
+// custom-sw
+self.addEventListener('message', event => {
+  if (event.data === 'skipWaiting') {
+    self.skipWaiting();
+  }
 });
