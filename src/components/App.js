@@ -30,8 +30,8 @@ function useAppUpdateAvailable() {
     };
   }, []);
   useEffect(() => {
+    if (!("serviceWorker" in navigator)) return;
     let ignore = false;
-
     serviceWorker.register({
       onUpdate: registration => {
         if (ignore) return;
