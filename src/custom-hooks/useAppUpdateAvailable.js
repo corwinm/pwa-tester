@@ -20,7 +20,6 @@ function useAppUpdateAvailable() {
     };
   }, []);
   useEffect(() => {
-    if (!("serviceWorker" in navigator)) return;
     let ignore = false;
     sw.register({
       onUpdate: registration => {
@@ -47,6 +46,7 @@ function useAppUpdateAvailable() {
   }, []);
 
   useEffect(() => {
+    if (!("serviceWorker" in navigator)) return;
     let ignore = false;
     navigator.serviceWorker.getRegistration().then(currentRegistration => {
       if (ignore) return;
