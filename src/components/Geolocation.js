@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Page from "./Page";
 
 function useGeolocation() {
   const [location, setlocation] = useState(undefined);
@@ -32,18 +33,13 @@ export default function Geolocation() {
   const location = useGeolocation();
 
   if (location instanceof Error) {
-    return (
-      <section className="section">
-        <h1>Geolocation is NOT suported!</h1>
-      </section>
-    );
+    return <Page title="Geolocation is NOT suported!" />;
   }
 
   return (
-    <section className="section">
-      <h1>Geolocation is suported!</h1>
+    <Page title="Geolocation is suported!">
       <div>latitude: {location && location.latitude}</div>
       <div>longitude: {location && location.longitude}</div>
-    </section>
+    </Page>
   );
 }

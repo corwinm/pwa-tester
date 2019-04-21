@@ -1,16 +1,16 @@
 @charset "utf-8";
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 
 // Set your brand colors
-$purple: #8A4D76;
-$pink: #FA7C91;
+$purple: #8a4d76;
+$pink: #fa7c91;
 $light-blue: rgb(27, 156, 248);
 $blue: rgb(5, 93, 158);
 $brown: #cccec1;
-$beige-light: #D0D1CD;
-$beige-lighter: #EFF0EB;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
 $black: #000000;
 
 // Update Bulma's global variables
@@ -25,6 +25,10 @@ $background: $black;
 
 // Update some of Bulma's component variables
 $body-background-color: $black;
+$dropdown-content-background-color: $black;
+$navbar-dropdown-background-color: $black;
+$navbar-dropdown-item-hover-color: $light-blue;
+$navbar-dropdown-boxed-shadow: 0 8px 8px rgba($beige-lighter, 0.1), 0 0 0 1px rgba($beige-lighter, 0.3);
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
@@ -32,6 +36,7 @@ $navbar-background-color: $black;
 $footer-background-color: $black;
 
 @import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 
 // Import only what you need from Bulma
 // @import "../node_modules/bulma/sass/utilities/_all.sass";

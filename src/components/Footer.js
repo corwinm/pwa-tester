@@ -10,7 +10,13 @@ export default function Footer() {
         <p>
           PWA Tester by <a href="https://github.com/corwinm">Corwin Marsh</a>.
           The source code is available on{" "}
-          <a href="https://github.com/corwinm/pwa-tester">GitHub</a>
+          <a href="https://github.com/corwinm/pwa-tester">
+            {" "}
+            <span className="icon">
+              <i className="fab fa-github" />
+            </span>
+            GitHub
+          </a>
         </p>
         <p>Built: {dateTimeStamp}</p>
       </div>

@@ -46,7 +46,10 @@ function useAppUpdateAvailable() {
   }, []);
 
   useEffect(() => {
-    if (!("serviceWorker" in navigator)) return;
+    if (!("serviceWorker" in navigator)) {
+      setregistration(undefined);
+      return;
+    }
     let ignore = false;
     navigator.serviceWorker.getRegistration().then(currentRegistration => {
       if (ignore) return;

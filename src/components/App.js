@@ -9,7 +9,9 @@ import Footer from "./Footer";
 import Notifications from "./Notifications";
 import AppUpdate from "./AppUpdate";
 import { AppUpdateContext } from "../context/AppUpdateContext";
-import useAppUpdateAvailable from '../custom-hooks/useAppUpdateAvailable';
+import useAppUpdateAvailable from "../custom-hooks/useAppUpdateAvailable";
+import DeviceOrientation from "./DeviceOrientation";
+import DeviceMotion from "./DeviceMotion";
 
 const App = () => {
   const appUpdateAvailable = useAppUpdateAvailable();
@@ -23,6 +25,8 @@ const App = () => {
           <Route path="/about" component={About} />
           <Route path="/geolocation" component={Geolocation} />
           <Route path="/notifications" component={Notifications} />
+          <Route path="/device/orientation" component={DeviceOrientation} />
+          <Route path="/device/motion" component={DeviceMotion} />
 
           <Footer />
           <AppUpdate />

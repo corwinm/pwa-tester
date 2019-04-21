@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import Page from "./Page";
 
 export default function Notifications() {
   const [permission, setPermission] = useState(
-    ('Notification'in window) && Notification.permission
+    "Notification" in window && Notification.permission
   );
 
   if (!permission) {
-    return <div className="section">Notifications are not suported.</div>;
+    return <Page>Notifications are not suported.</Page>;
   }
   if (permission === "granted") {
     const showTestNotification = () => {
@@ -20,14 +21,11 @@ export default function Notifications() {
     };
 
     return (
-      <div className="section">
-        <div className="container is-fluid">
-          <h1>Test Notification</h1>
-          <div>
-            <button onClick={showTestNotification}>Click Me!</button>
-          </div>
+      <Page title="Test Notification">
+        <div>
+          <button onClick={showTestNotification}>Click Me!</button>
         </div>
-      </div>
+      </Page>
     );
   }
 
@@ -38,14 +36,11 @@ export default function Notifications() {
   };
 
   return (
-    <section className="section">
-      <div className="container is-fluid">
-        <h1>Test Notification</h1>
-        {permission === "denied" && <div>Permission Denied</div>}
-        <div>
-          <button onClick={requestPermission}>Request Permission</button>
-        </div>
+    <Page title="Test Notification">
+      {permission === "denied" && <div>Permission Denied</div>}
+      <div>
+        <button onClick={requestPermission}>Request Permission</button>
       </div>
-    </section>
+    </Page>
   );
 }

@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { AppUpdateContext } from "../context/AppUpdateContext";
+import Page from "./Page";
+import Features from "./Features";
 
 function ServiceWorkerDetails({ registration }) {
   if (!registration) return null;
 
   return (
-    <section className="section">
-      <h1>Details</h1>
+    <Page title="Details">
       <div>
         Active State: {registration.active && registration.active.state}
       </div>
@@ -15,7 +16,7 @@ function ServiceWorkerDetails({ registration }) {
       </div>
       {(window.matchMedia("(display-mode: standalone)").matches ||
         window.navigator.standalone) && <div>Display mode is standalone</div>}
-    </section>
+    </Page>
   );
 }
 
@@ -37,6 +38,7 @@ export default function Home() {
         </div>
       </section>
       <ServiceWorkerDetails registration={appUpdate.registration} />
+      <Features registration={appUpdate.registration} />
     </>
   );
 }

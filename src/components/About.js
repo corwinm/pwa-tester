@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import Page from "./Page";
 
 export default function About() {
   return (
-    <section className="section">
-      About Page
-    </section>
-  )
+    <Page title="About Page">
+      <div>This is the about page.</div>
+    </Page>
+  );
 }
