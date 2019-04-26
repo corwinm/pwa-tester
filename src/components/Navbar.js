@@ -1,28 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import ShareButton from "./ShareButton";
-
-export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  function toggleMenu() {
-    setMenuOpen(!menuOpen);
-  }
-  return (
-    <NavbarFixed>
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
-          PWA Tester
-        </Link>
-        <NavHamburger menuOpen={menuOpen} toggleMenu={toggleMenu} />
-      </div>
-      <NavMenu menuOpen={menuOpen}>
-        <NavbarStart toggleMenu={toggleMenu} />
-        <NavbarEnd />
-      </NavMenu>
-    </NavbarFixed>
-  );
-}
 
 function NavbarFixed({ children }) {
   return (
@@ -62,39 +41,30 @@ function NavHamburger({ menuOpen, toggleMenu }) {
 }
 
 function NavbarStart({ toggleMenu }) {
+  function MenuLink(props) {
+    return (
+      <NavLink
+        {...props}
+        exact
+        onClick={toggleMenu}
+        className="navbar-item"
+        activeClassName="has-text-link"
+      />
+    );
+  }
   return (
     <div className="navbar-start">
-      <Link to="/" onClick={toggleMenu} className="navbar-item">
-        Home
-      </Link>
-      <Link to="/about" onClick={toggleMenu} className="navbar-item">
-        About
-      </Link>
-      <Link to="/geolocation" onClick={toggleMenu} className="navbar-item">
-        Geolocation
-      </Link>
-      <Link to="/notifications" onClick={toggleMenu} className="navbar-item">
-        Notifications
-      </Link>
+      <MenuLink to="/">Home</MenuLink>
+      <MenuLink to="/about">About</MenuLink>
+      <MenuLink to="/geolocation">Geolocation</MenuLink>
+      <MenuLink to="/notifications">Notifications</MenuLink>
       <div className="navbar-item has-dropdown is-hoverable">
         <a className="navbar-link" tabIndex="0">
           Device
         </a>
         <div className="navbar-dropdown is-boxed">
-          <Link
-            to="/device/orientation"
-            onClick={toggleMenu}
-            className="navbar-item"
-          >
-            Orientation
-          </Link>
-          <Link
-            to="/device/motion"
-            onClick={toggleMenu}
-            className="navbar-item"
-          >
-            Motion
-          </Link>
+          <MenuLink to="/device/orientation">Orientation</MenuLink>
+          <MenuLink to="/device/motion">Motion</MenuLink>
         </div>
       </div>
     </div>
@@ -112,3 +82,40 @@ function NavbarEnd() {
     </div>
   );
 }
+
+function BackButton({ onClick }) {
+  if (navigator.standalone) {
+    return (
+      <a className="navbar-item" tabIndex="0" onClick={onClick}>
+        <span className="icon">
+          <i className="fas fa-arrow-left" />
+        </span>
+      </a>
+    );
+  }
+  return null;
+}
+
+function Navbar(props) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  function toggleMenu() {
+    setMenuOpen(!menuOpen);
+  }
+  return (
+    <NavbarFixed>
+      <div className="navbar-brand">
+        <BackButton onClick={props.history.goBack} />
+        <NavLink to="/" className="navbar-item">
+          PWA Tester
+        </NavLink>
+        <NavHamburger menuOpen={menuOpen} toggleMenu={toggleMenu} />
+      </div>
+      <NavMenu menuOpen={menuOpen}>
+        <NavbarStart toggleMenu={toggleMenu} />
+        <NavbarEnd />
+      </NavMenu>
+    </NavbarFixed>
+  );
+}
+
+export default withRouter(Navbar);
