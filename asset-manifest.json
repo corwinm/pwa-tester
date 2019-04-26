@@ -1,16 +1,18 @@
 {
-  "main.css": "/pwa-tester/static/css/main.3295d82f.chunk.css",
-  "main.js": "/pwa-tester/static/js/main.e0a816b4.chunk.js",
-  "main.js.map": "/pwa-tester/static/js/main.e0a816b4.chunk.js.map",
-  "runtime~main.js": "/pwa-tester/static/js/runtime~main.ea62272b.js",
-  "runtime~main.js.map": "/pwa-tester/static/js/runtime~main.ea62272b.js.map",
-  "static/css/2.2ae7842f.chunk.css": "/pwa-tester/static/css/2.2ae7842f.chunk.css",
-  "static/js/2.eeebf926.chunk.js": "/pwa-tester/static/js/2.eeebf926.chunk.js",
-  "static/js/2.eeebf926.chunk.js.map": "/pwa-tester/static/js/2.eeebf926.chunk.js.map",
-  "index.html": "/pwa-tester/index.html",
-  "precache-manifest.dbbcb1a0d81c60cdc8dc158184c39bdc.js": "/pwa-tester/precache-manifest.dbbcb1a0d81c60cdc8dc158184c39bdc.js",
-  "service-worker.js": "/pwa-tester/service-worker.js",
-  "static/css/2.2ae7842f.chunk.css.map": "/pwa-tester/static/css/2.2ae7842f.chunk.css.map",
-  "static/css/main.3295d82f.chunk.css.map": "/pwa-tester/static/css/main.3295d82f.chunk.css.map",
-  "static/media/index.scss": "/pwa-tester/static/media/fa-solid-900.ff8d9f8a.ttf"
+  "files": {
+    "main.css": "/pwa-tester/static/css/main.66ab2876.chunk.css",
+    "main.js": "/pwa-tester/static/js/main.255e4be3.chunk.js",
+    "main.js.map": "/pwa-tester/static/js/main.255e4be3.chunk.js.map",
+    "runtime~main.js": "/pwa-tester/static/js/runtime~main.ea62272b.js",
+    "runtime~main.js.map": "/pwa-tester/static/js/runtime~main.ea62272b.js.map",
+    "static/css/2.0ab18998.chunk.css": "/pwa-tester/static/css/2.0ab18998.chunk.css",
+    "static/js/2.4c6e6b2a.chunk.js": "/pwa-tester/static/js/2.4c6e6b2a.chunk.js",
+    "static/js/2.4c6e6b2a.chunk.js.map": "/pwa-tester/static/js/2.4c6e6b2a.chunk.js.map",
+    "index.html": "/pwa-tester/index.html",
+    "precache-manifest.c4e28f749eec271920815a838bdaac0a.js": "/pwa-tester/precache-manifest.c4e28f749eec271920815a838bdaac0a.js",
+    "service-worker.js": "/pwa-tester/service-worker.js",
+    "static/css/2.0ab18998.chunk.css.map": "/pwa-tester/static/css/2.0ab18998.chunk.css.map",
+    "static/css/main.66ab2876.chunk.css.map": "/pwa-tester/static/css/main.66ab2876.chunk.css.map",
+    "static/media/index.scss": "/pwa-tester/static/media/fa-solid-900.ff8d9f8a.ttf"
+  }
 }
