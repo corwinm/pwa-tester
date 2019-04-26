@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Page from "./Page";
+import Page from "components/Page";
 
 function DeviceOrientationSupported() {
   const [orientation, setOrientation] = useState(null);

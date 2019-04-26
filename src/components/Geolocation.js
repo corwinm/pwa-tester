@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Page from "./Page";
+import Page from "components/Page";
 
 function useGeolocation() {
   const [location, setlocation] = useState(undefined);

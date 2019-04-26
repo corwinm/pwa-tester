@@ -1,17 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./App.scss";
-import Navbar from "./Navbar";
-import About from "./About";
-import Home from "./Home";
-import Geolocation from "./Geolocation";
-import Footer from "./Footer";
-import Notifications from "./Notifications";
-import AppUpdate from "./AppUpdate";
-import { AppUpdateContext } from "../context/AppUpdateContext";
-import useAppUpdateAvailable from "../custom-hooks/useAppUpdateAvailable";
-import DeviceOrientation from "./DeviceOrientation";
-import DeviceMotion from "./DeviceMotion";
+import "components/App.scss";
+import Navbar from "components/Navbar";
+import About from "components/About";
+import Home from "components/Home";
+import Geolocation from "components/Geolocation";
+import Footer from "components/Footer";
+import Notifications from "components/Notifications";
+import AppUpdate from "components/AppUpdate";
+import { AppUpdateContext } from "context/AppUpdateContext";
+import useAppUpdateAvailable from "custom-hooks/useAppUpdateAvailable";
+import DeviceOrientation from "components/DeviceOrientation";
+import DeviceMotion from "components/DeviceMotion";
 
 const App = () => {
   const appUpdateAvailable = useAppUpdateAvailable();

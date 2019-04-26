@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { NavLink, withRouter } from "react-router-dom";
-import ShareButton from "./ShareButton";
+import ShareButton from "components/ShareButton";
 
 function NavbarFixed({ children }) {
   return (

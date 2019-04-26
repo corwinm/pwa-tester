@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { AppUpdateContext } from "../context/AppUpdateContext";
-import Page from "./Page";
-import Features from "./Features";
+import { AppUpdateContext } from "context/AppUpdateContext";
+import Page from "components/Page";
+import Features from "components/Features";
 
 function ServiceWorkerDetails({ registration }) {
   if (!registration) return null;

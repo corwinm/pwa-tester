@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Page from "./Page";
+import Page from "components/Page";
 
 export default function Notifications() {
   const [permission, setPermission] = useState(

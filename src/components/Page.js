@@ -1,5 +1,5 @@
 import React from "react";
-import ErrorBoundary from "./ErrorBoundary";
+import ErrorBoundary from "components/ErrorBoundary";
 
 export default function Page({ title, children }) {
   return (

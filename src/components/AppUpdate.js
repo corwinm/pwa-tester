@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import styles from "./AppUpdate.module.scss";
-import { AppUpdateContext } from "../context/AppUpdateContext";
+import styles from "components/AppUpdate.module.scss";
+import { AppUpdateContext } from "context/AppUpdateContext";
 
 export default function AppUpdate() {
   const appUpdateAvailable = useContext(AppUpdateContext);
