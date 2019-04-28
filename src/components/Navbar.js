@@ -2,11 +2,12 @@
 import React, { useState } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import ShareButton from "components/ShareButton";
+import CheckUpdateButton from 'components/CheckUpdateButton';
 
 function NavbarFixed({ children }) {
   return (
     <nav
-      className="navbar is-transparent is-fixed-top"
+      className="navbar is-transparent is-fixed-top notch-inset"
       role="navigation"
       aria-label="main navigation"
     >
@@ -76,6 +77,7 @@ function NavbarEnd() {
     <div className="navbar-end">
       <div className="navbar-item">
         <div className="buttons">
+          <CheckUpdateButton />
           <ShareButton />
         </div>
       </div>
