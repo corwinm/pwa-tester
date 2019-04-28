@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5ca3a15d6eda24b0f5b5c8c8a5b39db0",
+    "revision": "a88284d7de070f1f3830e36be837bab1",
     "url": "/pwa-tester/index.html"
   },
   {
-    "revision": "19550d45ec4506b1250a",
+    "revision": "a508afca5b21fd259bf7",
     "url": "/pwa-tester/static/css/2.0ab18998.chunk.css"
   },
   {
-    "revision": "19ebb31ada1a6f34f206",
+    "revision": "b31c7701c8310f3ffa0f",
     "url": "/pwa-tester/static/css/main.7fa07268.chunk.css"
   },
   {
-    "revision": "19550d45ec4506b1250a",
-    "url": "/pwa-tester/static/js/2.4c6e6b2a.chunk.js"
+    "revision": "a508afca5b21fd259bf7",
+    "url": "/pwa-tester/static/js/2.d52dc06d.chunk.js"
   },
   {
-    "revision": "19ebb31ada1a6f34f206",
-    "url": "/pwa-tester/static/js/main.575c870c.chunk.js"
+    "revision": "b31c7701c8310f3ffa0f",
+    "url": "/pwa-tester/static/js/main.dada5d30.chunk.js"
   },
   {
     "revision": "f68e8b37986ee7c3460a",
