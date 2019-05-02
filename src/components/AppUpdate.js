@@ -2,6 +2,40 @@ import React, { useContext, useState } from "react";
 import styles from "components/AppUpdate.module.scss";
 import { AppUpdateContext } from "context/AppUpdateContext";
 
+function FloatingMessage({
+  title,
+  message = "",
+  actionText,
+  deleteClick,
+  actionClick
+}) {
+  return (
+    <div className={styles.floatingContainer + " notch-inset"}>
+      <article className={"message is-primary " + styles.withShadow}>
+        <div className="message-header">
+          <p>{title}</p>
+          <button
+            className="delete is-medium"
+            aria-label="delete"
+            onClick={deleteClick}
+          />
+        </div>
+        <div className="message-body">
+          {message}
+          <p>
+            <button
+              className="button is-primary is-fullwidth is-outlined"
+              onClick={actionClick}
+            >
+              {actionText}
+            </button>
+          </p>
+        </div>
+      </article>
+    </div>
+  );
+}
+
 export default function AppUpdate() {
   const appUpdateAvailable = useContext(AppUpdateContext);
   const [showInstallPrompt, setShowInstallPrompt] = useState(true);
@@ -12,27 +46,18 @@ export default function AppUpdate() {
       appUpdateAvailable.registration.waiting.postMessage("skipWaiting");
     };
     return (
-      <div className={styles.floatingContainer}>
-        <article className={"message is-primary " + styles.withShadow}>
-          <div className="message-header">
-            <button
-              className="button is-primary is-inverted is-outlined"
-              onClick={updateServiceWorker}
-            >
-              Update Now
-            </button>
-            <p>New version of the app available!!!</p>
-            <button
-              className="delete is-medium"
-              aria-label="delete"
-              onClick={() => setShowAppUpdate(false)}
-            />
-          </div>
-          <div className="message-body">
-            New version will automatically load after all windows reopened.
-          </div>
-        </article>
-      </div>
+      <FloatingMessage
+        title="New version of the app available!!!"
+        actionText="Update Now"
+        message={
+          <p>
+            New version will automatically load next visit after all open
+            windows are closed.
+          </p>
+        }
+        deleteClick={() => setShowAppUpdate(false)}
+        actionClick={updateServiceWorker}
+      />
     );
   }
   if (showInstallPrompt && appUpdateAvailable.installPrompt) {
@@ -49,25 +74,12 @@ export default function AppUpdate() {
       });
     };
     return (
-      <div className={styles.floatingContainer}>
-        <article className={"message is-primary " + styles.withShadow}>
-          <div className="message-header">
-            <button
-              className="button is-primary is-inverted is-outlined"
-              onClick={promptInstall}
-            >
-              Install App
-            </button>
-            <p>App available for installation!</p>
-            <button
-              className="delete is-medium"
-              aria-label="delete"
-              onClick={() => setShowInstallPrompt(false)}
-            />
-          </div>
-          <div className="message-body">Install the app!</div>
-        </article>
-      </div>
+      <FloatingMessage
+        title="App available for installation!"
+        actionText="Install App"
+        deleteClick={() => setShowInstallPrompt(false)}
+        actionClick={promptInstall}
+      />
     );
   }
   return null;

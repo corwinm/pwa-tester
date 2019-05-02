@@ -4,7 +4,7 @@ import ErrorBoundary from "components/ErrorBoundary";
 export default function Page({ title, children }) {
   return (
     <ErrorBoundary>
-      <div className="notch-inset">
+      <div className="notch-inset-item">
         <section className="section">
           <div className="container is-fluid">
             <h1 className="title has-text-white">{title}</h1>

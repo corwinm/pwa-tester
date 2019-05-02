@@ -7,7 +7,7 @@ import CheckUpdateButton from 'components/CheckUpdateButton';
 function NavbarFixed({ children }) {
   return (
     <nav
-      className="navbar is-transparent is-fixed-top notch-inset"
+      className="navbar is-transparent is-fixed-top notch-inset-item"
       role="navigation"
       aria-label="main navigation"
     >

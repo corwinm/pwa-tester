@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero is-primary notch-inset">
+      <section className="hero is-primary notch-inset-item">
         <div className="hero-body">
           <div className="container">
             <h1 className="title">{message}</h1>

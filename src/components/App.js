@@ -12,6 +12,7 @@ import { AppUpdateContext } from "context/AppUpdateContext";
 import useAppUpdateAvailable from "custom-hooks/useAppUpdateAvailable";
 import DeviceOrientation from "components/DeviceOrientation";
 import DeviceMotion from "components/DeviceMotion";
+import OfflineIndicator from 'components/OfflineIndicator';
 
 const App = () => {
   const appUpdateAvailable = useAppUpdateAvailable();
@@ -20,6 +21,7 @@ const App = () => {
       <AppUpdateContext.Provider value={appUpdateAvailable}>
         <Router basename={process.env.PUBLIC_URL}>
           <Navbar />
+          <OfflineIndicator />
 
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
