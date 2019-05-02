@@ -6,13 +6,31 @@ export default function Features({ registration }) {
     <Page title="Features">
       <div className="tile is-ancestor">
         <Feature description="Geolocation" supported={navigator.geolocation} />
-        <Feature description="Notifications" supported={"Notification" in window} />
-        <Feature description="Payments" supported={registration && registration.paymentManager} />
+        <Feature
+          description="Notifications"
+          supported={"Notification" in window}
+        />
+        <Feature
+          description="Payments"
+          supported={registration && registration.paymentManager}
+        />
       </div>
       <div className="tile is-ancestor">
         <Feature description="Motion" supported={window.DeviceMotionEvent} />
-        <Feature description="Orientation" supported={window.DeviceOrientationEvent} />
+        <Feature
+          description="Orientation"
+          supported={window.DeviceOrientationEvent}
+        />
+        <Feature description="Vibration" supported={navigator.vibrate} />
+      </div>
+      <div className="tile is-ancestor">
+        <Feature
+          description="Online Status"
+          supported={"onLine" in navigator}
+        />
+        <Feature description="Clipboard" supported={navigator.clipboard} />
         <Feature description="Web Share" supported={navigator.share} />
+        {/* navigator.mediaDevices.getUserMedia */}
       </div>
     </Page>
   );
