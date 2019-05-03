@@ -12,7 +12,8 @@ import { AppUpdateContext } from "context/AppUpdateContext";
 import useAppUpdateAvailable from "custom-hooks/useAppUpdateAvailable";
 import DeviceOrientation from "components/DeviceOrientation";
 import DeviceMotion from "components/DeviceMotion";
-import OfflineIndicator from 'components/OfflineIndicator';
+import OfflineIndicator from "components/OfflineIndicator";
+import Camera from "components/Camera";
 
 const App = () => {
   const appUpdateAvailable = useAppUpdateAvailable();
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/notifications" component={Notifications} />
           <Route path="/device/orientation" component={DeviceOrientation} />
           <Route path="/device/motion" component={DeviceMotion} />
+          <Route path="/device/camera" component={Camera} />
 
           <Footer />
           <AppUpdate />

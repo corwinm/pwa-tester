@@ -66,6 +66,7 @@ function NavbarStart({ toggleMenu }) {
         <div className="navbar-dropdown is-boxed">
           <MenuLink to="/device/orientation">Orientation</MenuLink>
           <MenuLink to="/device/motion">Motion</MenuLink>
+          <MenuLink to="/device/camera">Camera</MenuLink>
         </div>
       </div>
     </div>
