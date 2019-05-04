@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pwa-tester/static/css/main.27722453.chunk.css",
-    "main.js": "/pwa-tester/static/js/main.15585a30.chunk.js",
-    "main.js.map": "/pwa-tester/static/js/main.15585a30.chunk.js.map",
+    "main.js": "/pwa-tester/static/js/main.9e477d27.chunk.js",
+    "main.js.map": "/pwa-tester/static/js/main.9e477d27.chunk.js.map",
     "runtime~main.js": "/pwa-tester/static/js/runtime~main.ea62272b.js",
     "runtime~main.js.map": "/pwa-tester/static/js/runtime~main.ea62272b.js.map",
     "static/css/2.0ab18998.chunk.css": "/pwa-tester/static/css/2.0ab18998.chunk.css",
     "static/js/2.70af2dbe.chunk.js": "/pwa-tester/static/js/2.70af2dbe.chunk.js",
     "static/js/2.70af2dbe.chunk.js.map": "/pwa-tester/static/js/2.70af2dbe.chunk.js.map",
     "index.html": "/pwa-tester/index.html",
-    "precache-manifest.99c8776cd77fd168b30325d3dc705893.js": "/pwa-tester/precache-manifest.99c8776cd77fd168b30325d3dc705893.js",
+    "precache-manifest.4a485dbaa3de56b1dfe2b4c00430a5dd.js": "/pwa-tester/precache-manifest.4a485dbaa3de56b1dfe2b4c00430a5dd.js",
     "service-worker.js": "/pwa-tester/service-worker.js",
     "static/css/2.0ab18998.chunk.css.map": "/pwa-tester/static/css/2.0ab18998.chunk.css.map",
     "static/css/main.27722453.chunk.css.map": "/pwa-tester/static/css/main.27722453.chunk.css.map",
