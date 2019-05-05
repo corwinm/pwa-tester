@@ -77,12 +77,12 @@ function Feature({ description, supported, route }) {
   if (supported) {
     return (
       <div className="tile is-parent">
-        <article className="tile is-child box notification is-success">
+        <article className="tile is-child box notification is-success has-text-black">
           <p className="title">{description}</p>
           <p className="subtitle">
             Supported{" "}
             {route && (
-              <NavLink to={route} style={{ textDecoration: "none" }}>
+              <NavLink to={route} aria-label={description} style={{ textDecoration: "none" }}>
                 <span className="icon">
                   <i className="fas fa-arrow-circle-right" />
                 </span>
@@ -96,7 +96,7 @@ function Feature({ description, supported, route }) {
 
   return (
     <div className="tile is-parent">
-      <article className="tile is-child box notification is-danger">
+      <article className="tile is-child box notification is-danger has-text-black">
         <p className="title">{description}</p>
         <p className="subtitle">Not Supported</p>
       </article>
