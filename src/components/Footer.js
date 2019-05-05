@@ -24,7 +24,6 @@ export default function Footer() {
             </span>
             Lighthouse Score
           </a>
-          
         </p>
         <p>Built: {dateTimeStamp}</p>
       </div>

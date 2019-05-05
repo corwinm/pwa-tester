@@ -82,7 +82,11 @@ function Feature({ description, supported, route }) {
           <p className="subtitle">
             Supported{" "}
             {route && (
-              <NavLink to={route} aria-label={description} style={{ textDecoration: "none" }}>
+              <NavLink
+                to={route}
+                aria-label={description}
+                style={{ textDecoration: "none" }}
+              >
                 <span className="icon">
                   <i className="fas fa-arrow-circle-right" />
                 </span>
