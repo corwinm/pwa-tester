@@ -14,6 +14,7 @@ import DeviceOrientation from "components/DeviceOrientation";
 import DeviceMotion from "components/DeviceMotion";
 import OfflineIndicator from "components/OfflineIndicator";
 import Camera from "components/Camera";
+import ErrorBoundary from "./ErrorBoundary";
 
 const App = () => {
   const appUpdateAvailable = useAppUpdateAvailable();
@@ -23,15 +24,15 @@ const App = () => {
         <Router basename={process.env.PUBLIC_URL}>
           <Navbar />
           <OfflineIndicator />
-
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/geolocation" component={Geolocation} />
-          <Route path="/notifications" component={Notifications} />
-          <Route path="/device/orientation" component={DeviceOrientation} />
-          <Route path="/device/motion" component={DeviceMotion} />
-          <Route path="/device/camera" component={Camera} />
-
+          <ErrorBoundary>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/geolocation" component={Geolocation} />
+            <Route path="/notifications" component={Notifications} />
+            <Route path="/camera" component={Camera} />
+            <Route path="/device/orientation" component={DeviceOrientation} />
+            <Route path="/device/motion" component={DeviceMotion} />
+          </ErrorBoundary>
           <Footer />
           <AppUpdate />
         </Router>

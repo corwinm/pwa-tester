@@ -28,12 +28,21 @@ export default function Home() {
       ? "ServiceWorker Supported!"
       : "ServiceWorker NOT Supported!";
 
+  const callToAction = () => {
+    alert("This is going to be something really great someday!");
+  };
   return (
     <>
       <section className="hero is-primary notch-inset-item">
         <div className="hero-body">
           <div className="container">
             <h1 className="title">{message}</h1>
+            <button
+              className="button is-primary is-inverted is-outlined"
+              onClick={callToAction}
+            >
+              Call to Action!
+            </button>
           </div>
         </div>
       </section>

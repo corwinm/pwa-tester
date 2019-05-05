@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import ShareButton from "components/ShareButton";
-import CheckUpdateButton from 'components/CheckUpdateButton';
+import CheckUpdateButton from "components/CheckUpdateButton";
 
 function NavbarFixed({ children }) {
   return (
@@ -56,9 +56,10 @@ function NavbarStart({ toggleMenu }) {
   return (
     <div className="navbar-start">
       <MenuLink to="/">Home</MenuLink>
-      <MenuLink to="/about">About</MenuLink>
+      {/* <MenuLink to="/about">About</MenuLink> */}
       <MenuLink to="/geolocation">Geolocation</MenuLink>
       <MenuLink to="/notifications">Notifications</MenuLink>
+      <MenuLink to="/camera">Camera</MenuLink>
       <div className="navbar-item has-dropdown is-hoverable">
         <a className="navbar-link" tabIndex="0">
           Device
@@ -66,7 +67,6 @@ function NavbarStart({ toggleMenu }) {
         <div className="navbar-dropdown is-boxed">
           <MenuLink to="/device/orientation">Orientation</MenuLink>
           <MenuLink to="/device/motion">Motion</MenuLink>
-          <MenuLink to="/device/camera">Camera</MenuLink>
         </div>
       </div>
     </div>

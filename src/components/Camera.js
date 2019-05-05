@@ -6,7 +6,8 @@ function useCamera() {
 
   useEffect(() => {
     if (!navigator.mediaDevices) {
-      return Error("Media devices not supported.");
+      setMediaStream(Error("Media devices not supported."));
+      return;
     }
     let videoStream;
     async function getCameraSource() {
@@ -21,17 +22,22 @@ function useCamera() {
 
         setMediaStream(videoStream);
       } catch (error) {
-        console.error(error);
+        console.error("getCameraSource", error);
         setMediaStream(error);
       }
     }
     getCameraSource();
-
     return () => {
-      if (videoStream) {
-        videoStream.getVideoTracks().forEach(track => {
-          track.stop();
-        });
+      try {
+        if (videoStream && videoStream.getVideoTracks) {
+          videoStream.getVideoTracks().forEach(track => {
+            track.stop();
+          });
+        } else {
+          alert(`Camera not stopped?`);
+        }
+      } catch (error) {
+        alert(`${error.name}: ${error.message}`);
       }
     };
   }, []);
@@ -45,7 +51,7 @@ export default function Camera() {
   if (cameraSource instanceof Error || (cameraSource && cameraSource.name)) {
     return (
       <Page title="Camera is NOT suported!">
-        {cameraSource.name && cameraSource.name}
+        {cameraSource.name && cameraSource.name}:{" "}
         {cameraSource.message && cameraSource.message}
       </Page>
     );
@@ -64,7 +70,7 @@ export default function Camera() {
   return (
     <Page title="Camera is suported!">
       <div>Video Below?</div>
-      <video id="video-chat" ref={setupCameraSource} autoPlay />
+      <video id="video-chat" ref={setupCameraSource} autoPlay playsInline />
     </Page>
   );
 }
