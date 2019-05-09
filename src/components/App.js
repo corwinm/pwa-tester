@@ -15,30 +15,36 @@ import DeviceMotion from "components/DeviceMotion";
 import OfflineIndicator from "components/OfflineIndicator";
 import Camera from "components/Camera";
 import ErrorBoundary from "./ErrorBoundary";
+import { AnalyticsProvider } from "./Analytics";
 
 const App = () => {
   const appUpdateAvailable = useAppUpdateAvailable();
   return (
     <div className="App">
-      <AppUpdateContext.Provider value={appUpdateAvailable}>
-        <Router basename={process.env.PUBLIC_URL}>
-          <Navbar />
-          <OfflineIndicator />
-          <main role="main">
-            <ErrorBoundary>
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/geolocation" component={Geolocation} />
-              <Route path="/notifications" component={Notifications} />
-              <Route path="/camera" component={Camera} />
-              <Route path="/device/orientation" component={DeviceOrientation} />
-              <Route path="/device/motion" component={DeviceMotion} />
-            </ErrorBoundary>
-          </main>
-          <Footer />
-          <AppUpdate />
-        </Router>
-      </AppUpdateContext.Provider>
+      <AnalyticsProvider>
+        <AppUpdateContext.Provider value={appUpdateAvailable}>
+          <Router basename={process.env.PUBLIC_URL}>
+            <Navbar />
+            <OfflineIndicator />
+            <main role="main">
+              <ErrorBoundary>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/geolocation" component={Geolocation} />
+                <Route path="/notifications" component={Notifications} />
+                <Route path="/camera" component={Camera} />
+                <Route
+                  path="/device/orientation"
+                  component={DeviceOrientation}
+                />
+                <Route path="/device/motion" component={DeviceMotion} />
+              </ErrorBoundary>
+            </main>
+            <Footer />
+            <AppUpdate />
+          </Router>
+        </AppUpdateContext.Provider>
+      </AnalyticsProvider>
     </div>
   );
 };
