@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import "components/App.scss";
 import Navbar from "components/Navbar";
 import About from "components/About";
 import Home from "components/Home";
@@ -8,8 +7,8 @@ import Geolocation from "components/Geolocation";
 import Footer from "components/Footer";
 import Notifications from "components/Notifications";
 import AppUpdate from "components/AppUpdate";
-import { AppUpdateContext } from "context/AppUpdateContext";
-import useAppUpdateAvailable from "custom-hooks/useAppUpdateAvailable";
+import { AppStatusContext } from "context/AppStatusContext";
+import useAppStatus from "custom-hooks/useAppStatus";
 import DeviceOrientation from "components/DeviceOrientation";
 import DeviceMotion from "components/DeviceMotion";
 import OfflineIndicator from "components/OfflineIndicator";
@@ -18,12 +17,12 @@ import ErrorBoundary from "./ErrorBoundary";
 import RouteTrace from "./RouteTrace";
 
 const App = () => {
-  const appUpdateAvailable = useAppUpdateAvailable();
+  const appUpdateAvailable = useAppStatus();
   return (
     <div className="App">
-      <AppUpdateContext.Provider value={appUpdateAvailable}>
-        <Router basename={process.env.PUBLIC_URL}>
-          <RouteTrace />
+      <Router basename={process.env.PUBLIC_URL}>
+        <RouteTrace />
+        <AppStatusContext.Provider value={appUpdateAvailable}>
           <Navbar />
           <OfflineIndicator />
           <main role="main">
@@ -39,8 +38,8 @@ const App = () => {
           </main>
           <Footer />
           <AppUpdate />
-        </Router>
-      </AppUpdateContext.Provider>
+        </AppStatusContext.Provider>
+      </Router>
     </div>
   );
 };

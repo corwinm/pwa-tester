@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import styles from "components/AppUpdate.module.scss";
-import { AppUpdateContext } from "context/AppUpdateContext";
+import { AppStatusContext } from "context/AppStatusContext";
 
 function FloatingMessage({
   title,
@@ -37,7 +37,7 @@ function FloatingMessage({
 }
 
 export default function AppUpdate() {
-  const appUpdateAvailable = useContext(AppUpdateContext);
+  const appUpdateAvailable = useContext(AppStatusContext);
   const [showInstallPrompt, setShowInstallPrompt] = useState(true);
   const [showAppUpdate, setShowAppUpdate] = useState(true);
 

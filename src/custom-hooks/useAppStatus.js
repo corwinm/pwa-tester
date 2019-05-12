@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import * as sw from "../serviceWorker";
 
-function useAppUpdateAvailable() {
+function useAppStatus() {
   const [updateAvailable, setUpdateAvailable] = useState(false);
   const [offLineReady, setoffLineReady] = useState(false);
   const [registration, setregistration] = useState(null);
   const [installPrompt, setinstallPrompt] = useState(null);
+
   useEffect(() => {
     const installPromptHandler = e => {
       // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -19,6 +20,7 @@ function useAppUpdateAvailable() {
       window.removeEventListener("beforeinstallprompt", installPromptHandler);
     };
   }, []);
+
   useEffect(() => {
     let ignore = false;
     sw.register({
@@ -62,7 +64,8 @@ function useAppUpdateAvailable() {
       ignore = true;
     };
   }, []);
+
   return { updateAvailable, offLineReady, registration, installPrompt };
 }
 
-export default useAppUpdateAvailable;
+export default useAppStatus;

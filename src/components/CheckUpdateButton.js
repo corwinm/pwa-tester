@@ -1,15 +1,15 @@
 import React, { useContext, useState } from "react";
-import { AppUpdateContext } from "context/AppUpdateContext";
+import { AppStatusContext } from "context/AppStatusContext";
 
 export default function CheckUpdateButton() {
-  const appUpdateAvailable = useContext(AppUpdateContext);
+  const { registration, updateAvailable } = useContext(AppStatusContext);
   const [updating, setUpdating] = useState(false);
 
-  if (!appUpdateAvailable.registration) return null;
+  if (!registration) return null;
 
-  if (appUpdateAvailable.updateAvailable) {
+  if (updateAvailable) {
     const updateServiceWorker = () => {
-      appUpdateAvailable.registration.waiting.postMessage("skipWaiting");
+      registration.waiting.postMessage("skipWaiting");
     };
     return (
       <button className="button is-info" onClick={updateServiceWorker}>
@@ -23,8 +23,8 @@ export default function CheckUpdateButton() {
 
   async function checkForUpdate() {
     setUpdating(true);
-    const registration = await appUpdateAvailable.registration.update();
-    console.log(registration);
+    const newRegistration = await registration.update();
+    console.log(newRegistration);
     setUpdating(false);
   }
 

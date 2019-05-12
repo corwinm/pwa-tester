@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AppUpdateContext } from "context/AppUpdateContext";
+import { AppStatusContext } from "context/AppStatusContext";
 import Page from "components/Page";
 import Features from "components/Features";
 
@@ -21,7 +21,7 @@ function ServiceWorkerDetails({ registration }) {
 }
 
 export default function Home() {
-  const appUpdate = useContext(AppUpdateContext);
+  const appUpdate = useContext(AppStatusContext);
 
   const message =
     "serviceWorker" in navigator

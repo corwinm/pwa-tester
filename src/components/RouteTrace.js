@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Route } from "react-router-dom";
-import { AnalyticsContext } from "./Analytics";
+import { AnalyticsContext } from "context/AnalyticsContext";
 
 function Trace({ pageView, location }) {
   useEffect(() => {
