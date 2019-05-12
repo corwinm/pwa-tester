@@ -19,7 +19,7 @@ export default function ShareButton() {
   };
 
   return (
-    <button className="button is-primary" onClick={share}>
+    <button className="button is-primary" onClick={share} disabled={!navigator.share}>
       <span className="icon">
         <i className="fas fa-share" />
       </span>

@@ -4,10 +4,9 @@ import ReactGA from "react-ga";
 ReactGA.initialize("UA-139919526-1", {
   testMode: process.env.NODE_ENV !== "production"
 });
-ReactGA.pageview(window.location.pathname + window.location.search);
 
 function pageView(path) {
-  ReactGA.pageview(path);
+  ReactGA.pageview(process.env.PUBLIC_URL + path);
 }
 
 export const AnalyticsContext = React.createContext({

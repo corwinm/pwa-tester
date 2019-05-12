@@ -1,19 +1,24 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Route } from "react-router-dom";
 import { AnalyticsContext } from "./Analytics";
 
+function Trace({ pageView, location }) {
+  useEffect(() => {
+    console.log("Trace pageView", location);
+    pageView(location);
+  }, [pageView, location]);
+  return null;
+}
+
 export default function RouteTrace() {
   const analytics = useContext(AnalyticsContext);
+
   return (
     <Route
       path="/"
-      render={({ history, location }) => {
-        if (history.action === "PUSH") {
-          console.log("Route Event", location.pathname);
-          analytics.pageView(location.pathname);
-        }
-        return null;
-      }}
+      render={({ location }) => (
+        <Trace pageView={analytics.pageView} location={location.pathname + location.search} />
+      )}
     />
   );
 }
