@@ -13,7 +13,6 @@ export default function Notifications() {
     const showTestNotification = () => {
       const notification = new Notification("Hi there!");
       notification.onclick = function() {
-        // parent.focus();
         window.focus();
         this.close();
       };
