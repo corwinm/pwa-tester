@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  class="notch-inset-item"
+>
+  <section
+    class="section"
+  >
+    <div
+      class="container is-fluid"
+    >
+      <h1
+        class="title has-text-white"
+      />
+      <div />
+    </div>
+  </section>
+</div>
+`;
+
+exports[`renders children 1`] = `
+<div
+  class="notch-inset-item"
+>
+  <section
+    class="section"
+  >
+    <div
+      class="container is-fluid"
+    >
+      <h1
+        class="title has-text-white"
+      />
+      <div>
+        Expected Children
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`renders fallback UI for errors 1`] = `
+<div>
+  <h1>
+    Something went wrong.
+  </h1>
+  <p>
+    Error
+  </p>
+  <p>
+    Expected Error Message
+  </p>
+  <p>
+    <button
+      class="button"
+    >
+      Reload Page
+    </button>
+  </p>
+</div>
+`;
+
+exports[`renders title 1`] = `
+<div
+  class="notch-inset-item"
+>
+  <section
+    class="section"
+  >
+    <div
+      class="container is-fluid"
+    >
+      <h1
+        class="title has-text-white"
+      >
+        Expected Title
+      </h1>
+      <div />
+    </div>
+  </section>
+</div>
+`;
+
+exports[`renders title and children 1`] = `
+<div
+  class="notch-inset-item"
+>
+  <section
+    class="section"
+  >
+    <div
+      class="container is-fluid"
+    >
+      <h1
+        class="title has-text-white"
+      >
+        Expected Title
+      </h1>
+      <div>
+        Expected Children
+      </div>
+    </div>
+  </section>
+</div>
+`;
