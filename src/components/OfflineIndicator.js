@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useOffline } from "../custom-hooks/useOffline";
 
 export default function OfflineIndicator() {
-  const [offline, setOffline] = useState(!navigator.onLine);
-  useEffect(() => {
-    const updateOffline = () => setOffline(true);
-    const updateOnline = () => setOffline(false);
-    window.addEventListener("offline", updateOffline);
-    window.addEventListener("online", updateOnline);
-    return () => {
-      window.removeEventListener("offline", updateOffline);
-      window.removeEventListener("online", updateOnline);
-    };
-  }, []);
+  const offline = useOffline();
 
-  if (!("onLine" in navigator) || !offline) {
+  if (!offline) {
     return null;
   }
   return (

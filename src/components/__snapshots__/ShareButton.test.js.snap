@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches disabled snapshot 1`] = `
+<button
+  class="button is-primary"
+  disabled=""
+>
+  <span
+    class="icon"
+  >
+    <i
+      class="fas fa-share"
+    />
+  </span>
+  <span>
+    Share
+  </span>
+</button>
+`;
+
+exports[`matches enabled snapshot 1`] = `
+<button
+  class="button is-primary"
+>
+  <span
+    class="icon"
+  >
+    <i
+      class="fas fa-share"
+    />
+  </span>
+  <span>
+    Share
+  </span>
+</button>
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches offline snapshot 1`] = `
+<section
+  class="notch-inset-item has-background-grey-lighter "
+>
+  <h1
+    class="navbar-item has-text-danger"
+  >
+    Offline
+  </h1>
+</section>
+`;
+
+exports[`matches online snapshot 1`] = `null`;
