@@ -1,23 +1,23 @@
-import React, { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Navbar from "components/Navbar";
-import Home from "components/Home";
-import Footer from "components/Footer";
-import AppUpdate from "components/AppUpdate";
 import { AppStatusContext } from "context/AppStatusContext";
-import useAppStatus from "custom-hooks/useAppStatus";
-import OfflineIndicator from "components/OfflineIndicator";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import AppUpdate from "components/AppUpdate";
 import ErrorBoundary from "./ErrorBoundary";
+import Footer from "components/Footer";
+import Home from "components/Home";
+import Navbar from "components/Navbar";
+import OfflineIndicator from "components/OfflineIndicator";
+import React, { Suspense, lazy } from "react";
 import RouteTrace from "./RouteTrace";
+import useAppStatus from "custom-hooks/useAppStatus";
 
 const LazyAbout = lazy(() => import("components/About"));
-const LazyGeolocation = lazy(() => import("components/Geolocation"));
-const LazyNotifications = lazy(() => import("components/Notifications"));
 const LazyCamera = lazy(() => import("components/Camera"));
+const LazyDeviceMotion = lazy(() => import("components/DeviceMotion"));
 const LazyDeviceOrientation = lazy(() =>
   import("components/DeviceOrientation")
 );
-const LazyDeviceMotion = lazy(() => import("components/DeviceMotion"));
+const LazyGeolocation = lazy(() => import("components/Geolocation"));
+const LazyNotifications = lazy(() => import("components/Notifications"));
 
 const App = () => {
   const appUpdateAvailable = useAppStatus();
