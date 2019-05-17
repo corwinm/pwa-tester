@@ -23,3 +23,9 @@ test("clicking share calls share api",() => {
   
   expect(navigator.share).toBeCalled();
 })
+
+test("clicking share while disabled doesn't call share api",() => {
+  navigator.share = undefined;
+  const { getByText } = render(<ShareButton />);
+  fireEvent.click(getByText(/share/i));
+})
