@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{45:function(e,t,n){"use strict";n.r(t),n.d(t,"default",function(){return o});var a=n(0),u=n.n(a),i=n(11);function o(){return u.a.createElement(i.a,{title:"About Page"},u.a.createElement("div",null,"This is the about page."))}}}]);
+//# sourceMappingURL=3.703361c4.chunk.js.map
