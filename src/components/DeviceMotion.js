@@ -1,26 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Page from "components/Page";
+import { useMotion } from "custom-hooks/useMotion";
 
 function DeviceMotionSupported() {
-  const [orientation, setOrientation] = useState(null);
-  useEffect(() => {
-    const deviceMotionnHandler = rotationEvent => {
-      console.log(rotationEvent);
-      setOrientation(rotationEvent);
-    };
-    window.addEventListener("devicemotion", deviceMotionnHandler, true);
-    return () => {
-      window.removeEventListener("devicemotion", deviceMotionnHandler);
-    };
-  }, []);
+  const motion = useMotion();
+
   return (
     <Page title="Device Motion">
-      {orientation ? (
+      {motion ? (
         <>
           <div>Acceleration:</div>
-          <div>X: {orientation.acceleration.x}</div>
-          <div>Y: {orientation.acceleration.y}</div>
-          <div>Z: {orientation.acceleration.z}</div>
+          <div>X: {motion.acceleration.x}</div>
+          <div>Y: {motion.acceleration.y}</div>
+          <div>Z: {motion.acceleration.z}</div>
         </>
       ) : (
         <div>No data</div>

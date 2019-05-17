@@ -1,22 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Page from "components/Page";
+import { useOrientation } from "custom-hooks/useOrientation";
 
 function DeviceOrientationSupported() {
-  const [orientation, setOrientation] = useState(null);
-  useEffect(() => {
-    const deviceOrientationHandler = rotationEvent => {
-      console.log(rotationEvent);
-      setOrientation(rotationEvent);
-    };
-    window.addEventListener(
-      "deviceorientation",
-      deviceOrientationHandler,
-      true
-    );
-    return () => {
-      window.removeEventListener("deviceorientation", deviceOrientationHandler);
-    };
-  }, []);
+  const orientation = useOrientation();
+
   return (
     <Page title="Device Orientation">
       {orientation ? (
