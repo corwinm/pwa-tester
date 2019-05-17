@@ -1,20 +1,23 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "components/Navbar";
-import About from "components/About";
 import Home from "components/Home";
-import Geolocation from "components/Geolocation";
 import Footer from "components/Footer";
-import Notifications from "components/Notifications";
 import AppUpdate from "components/AppUpdate";
 import { AppStatusContext } from "context/AppStatusContext";
 import useAppStatus from "custom-hooks/useAppStatus";
-import DeviceOrientation from "components/DeviceOrientation";
-import DeviceMotion from "components/DeviceMotion";
 import OfflineIndicator from "components/OfflineIndicator";
-import Camera from "components/Camera";
 import ErrorBoundary from "./ErrorBoundary";
 import RouteTrace from "./RouteTrace";
+
+const LazyAbout = lazy(() => import("components/About"));
+const LazyGeolocation = lazy(() => import("components/Geolocation"));
+const LazyNotifications = lazy(() => import("components/Notifications"));
+const LazyCamera = lazy(() => import("components/Camera"));
+const LazyDeviceOrientation = lazy(() =>
+  import("components/DeviceOrientation")
+);
+const LazyDeviceMotion = lazy(() => import("components/DeviceMotion"));
 
 const App = () => {
   const appUpdateAvailable = useAppStatus();
@@ -27,13 +30,18 @@ const App = () => {
           <OfflineIndicator />
           <main role="main">
             <ErrorBoundary>
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/geolocation" component={Geolocation} />
-              <Route path="/notifications" component={Notifications} />
-              <Route path="/camera" component={Camera} />
-              <Route path="/device/orientation" component={DeviceOrientation} />
-              <Route path="/device/motion" component={DeviceMotion} />
+              <Suspense fallback={<div>Loading...</div>}>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={LazyAbout} />
+                <Route path="/geolocation" component={LazyGeolocation} />
+                <Route path="/notifications" component={LazyNotifications} />
+                <Route path="/camera" component={LazyCamera} />
+                <Route
+                  path="/device/orientation"
+                  component={LazyDeviceOrientation}
+                />
+                <Route path="/device/motion" component={LazyDeviceMotion} />
+              </Suspense>
             </ErrorBoundary>
           </main>
           <Footer />
