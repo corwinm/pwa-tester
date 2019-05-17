@@ -1,49 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Page from "components/Page";
-
-function useCamera() {
-  const [mediaStream, setMediaStream] = useState(undefined);
-
-  useEffect(() => {
-    if (!navigator.mediaDevices) {
-      setMediaStream(Error("Media devices not supported."));
-      return;
-    }
-    let videoStream;
-    async function getCameraSource() {
-      try {
-        videoStream = await navigator.mediaDevices.getUserMedia({
-          video: {
-            width: { ideal: 1280 },
-            height: { ideal: 720 }
-          },
-          audio: false
-        });
-
-        setMediaStream(videoStream);
-      } catch (error) {
-        console.error("getCameraSource", error);
-        setMediaStream(error);
-      }
-    }
-    getCameraSource();
-    return () => {
-      try {
-        if (videoStream && videoStream.getVideoTracks) {
-          videoStream.getVideoTracks().forEach(track => {
-            track.stop();
-          });
-        } else {
-          alert(`Camera not stopped?`);
-        }
-      } catch (error) {
-        alert(`${error.name}: ${error.message}`);
-      }
-    };
-  }, []);
-
-  return mediaStream;
-}
+import { useCamera } from "custom-hooks/useCamera";
 
 export default function Camera() {
   const cameraSource = useCamera();

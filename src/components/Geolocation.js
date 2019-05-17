@@ -1,33 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Page from "components/Page";
-
-function useGeolocation() {
-  const [location, setlocation] = useState(undefined);
-
-  useEffect(() => {
-    if (!navigator.geolocation) {
-      return Error("Geolocation is not supported.");
-    }
-    function geoSuccess(e) {
-      setlocation(e.coords);
-    }
-
-    function geoError(error) {
-      console.error(error);
-      setlocation(error);
-    }
-    const getPosition = navigator.geolocation.watchPosition(
-      geoSuccess,
-      geoError,
-      { timeout: 10000 }
-    );
-    return () => {
-      navigator.geolocation.clearWatch(getPosition);
-    };
-  }, []);
-
-  return location;
-}
+import { useGeolocation } from "custom-hooks/useGeolocation";
 
 export default function Geolocation() {
   const location = useGeolocation();
