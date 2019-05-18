@@ -7,7 +7,7 @@ export default function Camera() {
 
   if (cameraSource instanceof Error || (cameraSource && cameraSource.name)) {
     return (
-      <Page title="Camera is NOT suported!">
+      <Page title="Camera is NOT supported!">
         {cameraSource.name && cameraSource.name}:{" "}
         {cameraSource.message && cameraSource.message}
       </Page>
@@ -25,7 +25,7 @@ export default function Camera() {
   };
 
   return (
-    <Page title="Camera is suported!">
+    <Page title="Camera is supported!">
       <div>Video Below?</div>
       <video id="video-chat" ref={setupCameraSource} autoPlay playsInline />
     </Page>

@@ -7,7 +7,7 @@ export default function Notifications() {
   );
 
   if (!permission) {
-    return <Page>Notifications are not suported.</Page>;
+    return <Page>Notifications are not supported.</Page>;
   }
   if (permission === "granted") {
     const showTestNotification = () => {
