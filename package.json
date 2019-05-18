@@ -21,6 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build && cp build/index.html build/404.html && cra-append-sw -s ./src/custom-sw.js",
     "test": "react-scripts test",
+    "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

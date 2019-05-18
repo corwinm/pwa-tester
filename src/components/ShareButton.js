@@ -13,8 +13,6 @@ export default function ShareButton() {
       } catch (error) {
         console.log("Error sharing:", error);
       }
-    } else {
-      console.log("Share not supported.");
     }
   };
 
