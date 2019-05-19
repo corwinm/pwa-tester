@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches about snapshot 1`] = `
+<div
+  class="notch-inset-item"
+>
+  <section
+    class="section"
+  >
+    <div
+      class="container is-fluid"
+    >
+      <h1
+        class="title has-text-white"
+      >
+        About Page
+      </h1>
+      <div>
+        <div>
+          This is the about page.
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+`;

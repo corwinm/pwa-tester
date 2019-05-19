@@ -13,9 +13,7 @@ import useAppStatus from "custom-hooks/useAppStatus";
 const LazyAbout = lazy(() => import("components/About"));
 const LazyCamera = lazy(() => import("components/Camera"));
 const LazyDeviceMotion = lazy(() => import("components/DeviceMotion"));
-const LazyDeviceOrientation = lazy(() =>
-  import("components/DeviceOrientation")
-);
+const LazyOrientation = lazy(() => import("components/DeviceOrientation"));
 const LazyGeolocation = lazy(() => import("components/Geolocation"));
 const LazyNotifications = lazy(() => import("components/Notifications"));
 
@@ -36,10 +34,7 @@ const App = () => {
                 <Route path="/geolocation" component={LazyGeolocation} />
                 <Route path="/notifications" component={LazyNotifications} />
                 <Route path="/camera" component={LazyCamera} />
-                <Route
-                  path="/device/orientation"
-                  component={LazyDeviceOrientation}
-                />
+                <Route path="/device/orientation" component={LazyOrientation} />
                 <Route path="/device/motion" component={LazyDeviceMotion} />
               </Suspense>
             </ErrorBoundary>

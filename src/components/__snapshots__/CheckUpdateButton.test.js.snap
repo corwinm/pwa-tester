@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches registered snapshot 1`] = `
+<button
+  class="button is-info"
+>
+  <span
+    class="icon"
+  >
+    <i
+      class="fas fa-sync"
+    />
+  </span>
+  <span>
+    Check for Update
+  </span>
+</button>
+`;
+
+exports[`matches unregistered snapshot 1`] = `null`;
+
+exports[`matches update available snapshot 1`] = `
+<button
+  class="button is-info"
+>
+  <span
+    class="icon"
+  >
+    <i
+      class="fas fa-sync"
+    />
+  </span>
+  <span>
+    Update Now
+  </span>
+</button>
+`;
