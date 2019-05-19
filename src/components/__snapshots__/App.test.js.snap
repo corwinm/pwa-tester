@@ -1,0 +1,451 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  class="App"
+>
+  <nav
+    aria-label="main navigation"
+    class="navbar is-transparent is-fixed-top notch-inset-item"
+    role="navigation"
+  >
+    <div
+      class="navbar-brand"
+    >
+      <a
+        aria-current="page"
+        class="navbar-item active"
+        href="/"
+      >
+        PWA Tester
+      </a>
+      <a
+        aria-expanded="false"
+        aria-label="menu"
+        class="navbar-burger burger "
+        role="button"
+        tabindex="0"
+      >
+        <span
+          aria-hidden="true"
+        />
+        <span
+          aria-hidden="true"
+        />
+        <span
+          aria-hidden="true"
+        />
+      </a>
+    </div>
+    <div
+      class="navbar-menu "
+    >
+      <div
+        class="navbar-start"
+      >
+        <a
+          aria-current="page"
+          class="navbar-item has-text-link"
+          href="/"
+        >
+          Home
+        </a>
+        <a
+          class="navbar-item"
+          href="/geolocation"
+        >
+          Geolocation
+        </a>
+        <a
+          class="navbar-item"
+          href="/notifications"
+        >
+          Notifications
+        </a>
+        <a
+          class="navbar-item"
+          href="/camera"
+        >
+          Camera
+        </a>
+        <div
+          class="navbar-item has-dropdown is-hoverable"
+        >
+          <a
+            class="navbar-link"
+            tabindex="0"
+          >
+            Device
+          </a>
+          <div
+            class="navbar-dropdown is-boxed"
+          >
+            <a
+              class="navbar-item"
+              href="/device/orientation"
+            >
+              Orientation
+            </a>
+            <a
+              class="navbar-item"
+              href="/device/motion"
+            >
+              Motion
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="navbar-end"
+      >
+        <div
+          class="navbar-item"
+        >
+          <div
+            class="buttons"
+          >
+            <button
+              class="button is-primary"
+              disabled=""
+            >
+              <span
+                class="icon"
+              >
+                <i
+                  class="fas fa-share"
+                />
+              </span>
+              <span>
+                Share
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main
+    role="main"
+  >
+    <section
+      class="hero is-primary notch-inset-item"
+    >
+      <div
+        class="hero-body"
+      >
+        <div
+          class="container"
+        >
+          <h1
+            class="title"
+          >
+            ServiceWorker NOT Supported!
+          </h1>
+          <button
+            class="button is-primary is-inverted is-outlined"
+          >
+            Call to Action!
+          </button>
+        </div>
+      </div>
+    </section>
+    <div
+      class="notch-inset-item"
+    >
+      <section
+        class="section"
+      >
+        <div
+          class="container is-fluid"
+        >
+          <h1
+            class="title has-text-white"
+          >
+            Features
+          </h1>
+          <div>
+            <div
+              class="tile is-ancestor"
+            >
+              <div
+                class="tile is-parent"
+              >
+                <article
+                  class="tile is-child box notification is-danger has-text-black"
+                >
+                  <p
+                    class="title"
+                  >
+                    Geolocation
+                  </p>
+                  <p
+                    class="subtitle"
+                  >
+                    Not Supported
+                  </p>
+                </article>
+              </div>
+              <div
+                class="tile is-parent"
+              >
+                <article
+                  class="tile is-child box notification is-danger has-text-black"
+                >
+                  <p
+                    class="title"
+                  >
+                    Camera
+                  </p>
+                  <p
+                    class="subtitle"
+                  >
+                    Not Supported
+                  </p>
+                </article>
+              </div>
+              <div
+                class="tile is-parent"
+              >
+                <article
+                  class="tile is-child box notification is-danger has-text-black"
+                >
+                  <p
+                    class="title"
+                  >
+                    Notifications
+                  </p>
+                  <p
+                    class="subtitle"
+                  >
+                    Not Supported
+                  </p>
+                </article>
+              </div>
+            </div>
+            <div
+              class="tile is-ancestor"
+            >
+              <div
+                class="tile is-parent"
+              >
+                <article
+                  class="tile is-child box notification is-danger has-text-black"
+                >
+                  <p
+                    class="title"
+                  >
+                    Payments
+                  </p>
+                  <p
+                    class="subtitle"
+                  >
+                    Not Supported
+                  </p>
+                </article>
+              </div>
+              <div
+                class="tile is-parent"
+              >
+                <article
+                  class="tile is-child box notification is-danger has-text-black"
+                >
+                  <p
+                    class="title"
+                  >
+                    Motion
+                  </p>
+                  <p
+                    class="subtitle"
+                  >
+                    Not Supported
+                  </p>
+                </article>
+              </div>
+              <div
+                class="tile is-parent"
+              >
+                <article
+                  class="tile is-child box notification is-danger has-text-black"
+                >
+                  <p
+                    class="title"
+                  >
+                    Orientation
+                  </p>
+                  <p
+                    class="subtitle"
+                  >
+                    Not Supported
+                  </p>
+                </article>
+              </div>
+            </div>
+            <div
+              class="tile is-ancestor"
+            >
+              <div
+                class="tile is-parent"
+              >
+                <article
+                  class="tile is-child box notification is-danger has-text-black"
+                >
+                  <p
+                    class="title"
+                  >
+                    Vibration
+                  </p>
+                  <p
+                    class="subtitle"
+                  >
+                    Not Supported
+                  </p>
+                </article>
+              </div>
+              <div
+                class="tile is-parent"
+              >
+                <article
+                  class="tile is-child box notification is-success has-text-black"
+                >
+                  <p
+                    class="title"
+                  >
+                    Online Status
+                  </p>
+                  <p
+                    class="subtitle"
+                  >
+                    Supported
+                     
+                  </p>
+                </article>
+              </div>
+              <div
+                class="tile is-parent"
+              >
+                <article
+                  class="tile is-child box notification is-danger has-text-black"
+                >
+                  <p
+                    class="title"
+                  >
+                    Clipboard
+                  </p>
+                  <p
+                    class="subtitle"
+                  >
+                    Not Supported
+                  </p>
+                </article>
+              </div>
+            </div>
+            <div
+              class="tile is-ancestor"
+            >
+              <div
+                class="tile is-parent"
+              >
+                <article
+                  class="tile is-child box notification is-danger has-text-black"
+                >
+                  <p
+                    class="title"
+                  >
+                    Web Share
+                  </p>
+                  <p
+                    class="subtitle"
+                  >
+                    Not Supported
+                  </p>
+                </article>
+              </div>
+              <div
+                class="tile is-parent"
+              >
+                <article
+                  class="tile is-child box notification is-danger has-text-black"
+                >
+                  <p
+                    class="title"
+                  >
+                    Push Notifications
+                  </p>
+                  <p
+                    class="subtitle"
+                  >
+                    Not Supported
+                  </p>
+                </article>
+              </div>
+              <div
+                class="tile is-parent"
+              >
+                <article
+                  class="tile is-child box notification is-danger has-text-black"
+                >
+                  <p
+                    class="title"
+                  >
+                    Background Sync
+                  </p>
+                  <p
+                    class="subtitle"
+                  >
+                    Not Supported
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer
+    class="footer"
+  >
+    <div
+      class="content has-text-centered"
+    >
+      <p>
+        PWA Tester by 
+        <a
+          href="https://github.com/corwinm"
+        >
+          Corwin Marsh
+        </a>
+        . The source code is available on
+         
+        <a
+          href="https://github.com/corwinm/pwa-tester"
+        >
+           
+          <span
+            class="icon"
+          >
+            <i
+              class="fab fa-github"
+            />
+          </span>
+          GitHub
+        </a>
+        <a
+          href="https://googlechrome.github.io/lighthouse/viewer/?gist=6ac7f4fd8b349c903dfcf04d2ff88e3e"
+        >
+           
+          <span
+            class="icon"
+          >
+            <i
+              class="fab fa-chrome"
+            />
+          </span>
+          Lighthouse Score
+        </a>
+      </p>
+      Mock Timestamp
+    </div>
+  </footer>
+</div>
+`;

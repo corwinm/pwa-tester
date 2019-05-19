@@ -1,7 +1,5 @@
 import React from "react";
-import preval from "preval.macro";
-
-const dateTimeStamp = preval`module.exports = new Date().toLocaleString();`;
+import BuildTimeStamp from 'components/BuildTimeStamp';
 
 export default function Footer() {
   return (
@@ -25,7 +23,7 @@ export default function Footer() {
             Lighthouse Score
           </a>
         </p>
-        <p>Built: {dateTimeStamp}</p>
+        <BuildTimeStamp />
       </div>
     </footer>
   );

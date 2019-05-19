@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup, fireEvent, wait, act } from "react-testing-library";
+import { render, cleanup, fireEvent, wait } from "react-testing-library";
 import CheckUpdateButton from "./CheckUpdateButton";
 import { AppStatusContext } from "context/AppStatusContext";
 
