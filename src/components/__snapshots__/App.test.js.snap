@@ -52,6 +52,12 @@ exports[`matches snapshot 1`] = `
         </a>
         <a
           class="navbar-item"
+          href="/about"
+        >
+          About
+        </a>
+        <a
+          class="navbar-item"
           href="/geolocation"
         >
           Geolocation

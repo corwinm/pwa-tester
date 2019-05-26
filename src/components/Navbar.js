@@ -56,7 +56,7 @@ function NavbarStart({ toggleMenu }) {
   return (
     <div className="navbar-start">
       <MenuLink to="/">Home</MenuLink>
-      {/* <MenuLink to="/about">About</MenuLink> */}
+      <MenuLink to="/about">About</MenuLink>
       <MenuLink to="/geolocation">Geolocation</MenuLink>
       <MenuLink to="/notifications">Notifications</MenuLink>
       <MenuLink to="/camera">Camera</MenuLink>

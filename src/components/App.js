@@ -1,14 +1,13 @@
-import { AppStatusContext } from "context/AppStatusContext";
+import { AppStatusProvider } from "context/AppStatusContext";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import AppUpdate from "components/AppUpdate";
-import ErrorBoundary from "./ErrorBoundary";
+import ErrorBoundary from "components/ErrorBoundary";
 import Footer from "components/Footer";
 import Home from "components/Home";
 import Navbar from "components/Navbar";
 import OfflineIndicator from "components/OfflineIndicator";
 import React, { Suspense, lazy } from "react";
-import RouteTrace from "./RouteTrace";
-import useAppStatus from "custom-hooks/useAppStatus";
+import RouteTrace from "components/RouteTrace";
 
 const LazyAbout = lazy(() => import("components/About"));
 const LazyCamera = lazy(() => import("components/Camera"));
@@ -18,12 +17,11 @@ const LazyGeolocation = lazy(() => import("components/Geolocation"));
 const LazyNotifications = lazy(() => import("components/Notifications"));
 
 const App = () => {
-  const appUpdateAvailable = useAppStatus();
   return (
     <div className="App">
-      <Router basename={process.env.PUBLIC_URL}>
-        <RouteTrace />
-        <AppStatusContext.Provider value={appUpdateAvailable}>
+      <AppStatusProvider>
+        <Router basename={process.env.PUBLIC_URL}>
+          <RouteTrace />
           <Navbar />
           <OfflineIndicator />
           <main role="main">
@@ -41,8 +39,8 @@ const App = () => {
           </main>
           <Footer />
           <AppUpdate />
-        </AppStatusContext.Provider>
-      </Router>
+        </Router>
+      </AppStatusProvider>
     </div>
   );
 };
