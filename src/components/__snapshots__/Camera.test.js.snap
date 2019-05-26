@@ -56,6 +56,36 @@ exports[`Object from cameraSource shows supported and video 1`] = `
 </div>
 `;
 
+exports[`Object from cameraSource shows supported and video with fallback video source 1`] = `
+<div
+  class="notch-inset-item"
+>
+  <section
+    class="section"
+  >
+    <div
+      class="container is-fluid"
+    >
+      <h1
+        class="title has-text-white"
+      >
+        Camera is supported!
+      </h1>
+      <div>
+        <div>
+          Video Below?
+        </div>
+        <video
+          autoplay=""
+          id="video-chat"
+          playsinline=""
+        />
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
 exports[`matches snapshot 1`] = `
 <div
   class="notch-inset-item"

@@ -25,7 +25,28 @@ test("Error from cameraSource shows not supported", () => {
 
 test("Object from cameraSource shows supported and video", () => {
   const { useCamera } = require("custom-hooks/useCamera");
-  useCamera.mockImplementation(() => {});
+  useCamera.mockImplementation(() => ({
+    mockCameraSource: "mockCameraSource"
+  }));
+
+  const origionalSrcObject = HTMLVideoElement.prototype.srcObject;
+  HTMLVideoElement.prototype.srcObject = {};
+
+  const { getByText, container } = render(<Camera />);
+
+  expect(container.firstChild).toMatchSnapshot();
+  expect(getByText(/Camera is supported!/)).toBeTruthy();
+  expect(container.querySelector("video")).toBeTruthy();
+  HTMLVideoElement.prototype.srcObject = origionalSrcObject;
+});
+
+test("Object from cameraSource shows supported and video with fallback video source", () => {
+  const { useCamera } = require("custom-hooks/useCamera");
+  useCamera.mockImplementation(() => ({
+    mockCameraSource: "mockCameraSource"
+  }));
+
+  window.URL.createObjectURL = jest.fn(() => "mock-video-url");
 
   const { getByText, container } = render(<Camera />);
 
