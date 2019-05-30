@@ -5,7 +5,6 @@
   "homepage": "https://corwinm.github.io/pwa-tester",
   "dependencies": {
     "bulma": "^0.7.4",
-    "cra-append-sw": "^2.6.1",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "preval.macro": "^3.0.0",
@@ -19,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cp build/index.html build/404.html && cra-append-sw -s ./src/custom-sw.js",
+    "build": "react-scripts build && cp build/index.html build/404.html",
     "test": "react-scripts test",
     "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",

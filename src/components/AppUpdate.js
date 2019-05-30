@@ -11,7 +11,7 @@ export default function AppUpdate() {
 
   if (showAppUpdate && updateAvailable) {
     const updateServiceWorker = () => {
-      registration.waiting.postMessage("skipWaiting");
+      registration.waiting.postMessage({type: "SKIP_WAITING"});
     };
     return (
       <FloatingMessage

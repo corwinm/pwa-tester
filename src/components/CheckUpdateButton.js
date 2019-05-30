@@ -9,7 +9,7 @@ export default function CheckUpdateButton() {
 
   if (updateAvailable) {
     const updateServiceWorker = () => {
-      registration.waiting.postMessage("skipWaiting");
+      registration.waiting.postMessage({type: "SKIP_WAITING"});
     };
     return (
       <button className="button is-info" onClick={updateServiceWorker}>

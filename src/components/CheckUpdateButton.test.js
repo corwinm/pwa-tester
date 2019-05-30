@@ -47,7 +47,7 @@ test("clicking update now posts message to registration", () => {
   fireEvent.click(getByText(/update now/i));
 
   expect(mockRegistration.waiting.postMessage.mock.calls.length).toBe(1);
-  expect(mockRegistration.waiting.postMessage).toBeCalledWith("skipWaiting");
+  expect(mockRegistration.waiting.postMessage).toBeCalledWith({type: "SKIP_WAITING"});
 });
 
 test("clicking check for update updates the registration", async () => {
