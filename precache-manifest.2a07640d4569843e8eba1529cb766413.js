@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b52bb26d3ff0c364cc3d3c3e7ff0e6e9",
+    "revision": "3a90b62de3bf7f0a57417e778a848dd5",
     "url": "/pwa-tester/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pwa-tester/static/css/2.0ab18998.chunk.css"
   },
   {
-    "revision": "79269c682281965978c5",
+    "revision": "ac613c277983f39a5177",
     "url": "/pwa-tester/static/css/main.91c555ca.chunk.css"
   },
   {
@@ -20,32 +20,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pwa-tester/static/js/3.2f8a2055.chunk.js"
   },
   {
-    "revision": "db8a5fb66f1a615b91e4",
-    "url": "/pwa-tester/static/js/4.d7b64f0a.chunk.js"
+    "revision": "587000d3fc6caa8eda1c",
+    "url": "/pwa-tester/static/js/4.8da05a42.chunk.js"
   },
   {
-    "revision": "caa333c9610258b53257",
-    "url": "/pwa-tester/static/js/5.6faee9a7.chunk.js"
+    "revision": "07ba625c6afa97c25115",
+    "url": "/pwa-tester/static/js/5.4e8a224f.chunk.js"
   },
   {
-    "revision": "bc3ab356c9995199baab",
-    "url": "/pwa-tester/static/js/6.0c2b7d71.chunk.js"
+    "revision": "83fb50aa989bfbcd6fbd",
+    "url": "/pwa-tester/static/js/6.b05c2870.chunk.js"
   },
   {
-    "revision": "258d12aaa0a25ef4c955",
-    "url": "/pwa-tester/static/js/7.f707ad29.chunk.js"
+    "revision": "31691962cb5380e3d60d",
+    "url": "/pwa-tester/static/js/7.9fcdb95d.chunk.js"
   },
   {
-    "revision": "b8a6a7ae8a43ff01d4df",
-    "url": "/pwa-tester/static/js/8.11f15331.chunk.js"
+    "revision": "a62c0b11604797065e55",
+    "url": "/pwa-tester/static/js/8.6c13ac44.chunk.js"
   },
   {
-    "revision": "79269c682281965978c5",
-    "url": "/pwa-tester/static/js/main.0c7bc9cc.chunk.js"
+    "revision": "ac613c277983f39a5177",
+    "url": "/pwa-tester/static/js/main.1ac1942e.chunk.js"
   },
   {
-    "revision": "9343096912a2a1801c17",
-    "url": "/pwa-tester/static/js/runtime~main.5869b52b.js"
+    "revision": "231fcbf26d0730cf6199",
+    "url": "/pwa-tester/static/js/runtime~main.4c9d3f39.js"
   },
   {
     "revision": "2ef8ba3410dcc71578a880e7064acd7a",
