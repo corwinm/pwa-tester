@@ -15,7 +15,7 @@ export default function AppUpdate() {
     };
     return (
       <FloatingMessage
-        title="New version of the app available!!!"
+        title="New version of the app available!"
         actionText="Update Now"
         message={
           <p>
