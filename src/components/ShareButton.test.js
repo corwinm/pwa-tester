@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup, fireEvent } from "react-testing-library";
+import { render, cleanup, fireEvent } from "@testing-library/react";
 import ShareButton from "./ShareButton";
 
 afterEach(cleanup);
@@ -28,7 +28,7 @@ test("clicking share calls share api and fails quietly", () => {
   console.log = jest.fn();
   const expectedError = Error("");
   navigator.share = jest.fn(() => {
-    throw expectedError
+    throw expectedError;
   });
   const { getByText } = render(<ShareButton />);
   fireEvent.click(getByText(/share/i));

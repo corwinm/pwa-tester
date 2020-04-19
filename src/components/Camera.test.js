@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup } from "react-testing-library";
+import { render, cleanup } from "@testing-library/react";
 import Camera from "./Camera";
 
 jest.mock("custom-hooks/useCamera");
@@ -26,7 +26,7 @@ test("Error from cameraSource shows not supported", () => {
 test("Object from cameraSource shows supported and video", () => {
   const { useCamera } = require("custom-hooks/useCamera");
   useCamera.mockImplementation(() => ({
-    mockCameraSource: "mockCameraSource"
+    mockCameraSource: "mockCameraSource",
   }));
 
   const origionalSrcObject = HTMLVideoElement.prototype.srcObject;
@@ -43,7 +43,7 @@ test("Object from cameraSource shows supported and video", () => {
 test("Object from cameraSource shows supported and video with fallback video source", () => {
   const { useCamera } = require("custom-hooks/useCamera");
   useCamera.mockImplementation(() => ({
-    mockCameraSource: "mockCameraSource"
+    mockCameraSource: "mockCameraSource",
   }));
 
   window.URL.createObjectURL = jest.fn(() => "mock-video-url");

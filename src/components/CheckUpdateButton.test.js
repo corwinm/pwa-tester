@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup, fireEvent, wait } from "react-testing-library";
+import { render, cleanup, fireEvent, waitFor } from "@testing-library/react";
 import CheckUpdateButton from "./CheckUpdateButton";
 import { AppStatusContext } from "context/AppStatusContext";
 
@@ -47,7 +47,9 @@ test("clicking update now posts message to registration", () => {
   fireEvent.click(getByText(/update now/i));
 
   expect(mockRegistration.waiting.postMessage.mock.calls.length).toBe(1);
-  expect(mockRegistration.waiting.postMessage).toBeCalledWith({type: "SKIP_WAITING"});
+  expect(mockRegistration.waiting.postMessage).toBeCalledWith({
+    type: "SKIP_WAITING",
+  });
 });
 
 test("clicking check for update updates the registration", async () => {
@@ -62,14 +64,16 @@ test("clicking check for update updates the registration", async () => {
   );
 
   mockRegistration.update.mockImplementation(async () => {
-    await wait(() => expect(getByText(/updating/i)).toBeTruthy());
-
-    return { newregistration: "new registration" };
+    return Promise.resolve({ newregistration: "new registration" });
   });
-
+  
   fireEvent.click(getByText(/Check for Update/i));
-
+  expect(getByText(/updating/i)).toBeInTheDocument();
   expect(mockRegistration.update).toBeCalled();
+  // await wait(() => getByText(/updating/i));
 
-  return await wait(() => expect(getByText(/Check for Update/i)).toBeTruthy());
+  // await wait();
+  // expect(getByText(/updating/i)).toBeTruthy();
+  // expect(getByText(/Check for Update/i)).toBeTruthy();
+  await waitFor(() => expect(getByText(/Check for Update/i)).toBeInTheDocument());
 });
