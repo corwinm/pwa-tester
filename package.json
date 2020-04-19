@@ -22,8 +22,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && cp build/index.html build/404.html",
-    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "coverage": "react-scripts test --coverage --watchAll=false --env=jest-environment-jsdom-sixteen",
+    "test": "react-scripts test",
+    "coverage": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -38,6 +38,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.8.1"
+    "@fortawesome/fontawesome-free": "^5.8.1",
+    "@sheerun/mutationobserver-shim": "^0.3.3"
   }
 }

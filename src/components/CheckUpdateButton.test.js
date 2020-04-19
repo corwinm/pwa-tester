@@ -70,10 +70,5 @@ test("clicking check for update updates the registration", async () => {
   fireEvent.click(getByText(/Check for Update/i));
   expect(getByText(/updating/i)).toBeInTheDocument();
   expect(mockRegistration.update).toBeCalled();
-  // await wait(() => getByText(/updating/i));
-
-  // await wait();
-  // expect(getByText(/updating/i)).toBeTruthy();
-  // expect(getByText(/Check for Update/i)).toBeTruthy();
   await waitFor(() => expect(getByText(/Check for Update/i)).toBeInTheDocument());
 });
