@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import * as sw from "../serviceWorker";
+import * as sw from "../serviceWorkerRegistration";
 
 function useAppStatus() {
   const [updateAvailable, setUpdateAvailable] = useState(false);
@@ -8,7 +8,7 @@ function useAppStatus() {
   const [installPrompt, setinstallPrompt] = useState(null);
 
   useEffect(() => {
-    const installPromptHandler = e => {
+    const installPromptHandler = (e) => {
       // Prevent Chrome 67 and earlier from automatically showing the prompt
       e.preventDefault();
       // Stash the event so it can be triggered later.
@@ -24,7 +24,7 @@ function useAppStatus() {
   useEffect(() => {
     let ignore = false;
     sw.register({
-      onUpdate: registration => {
+      onUpdate: (registration) => {
         if (ignore) return;
         console.log(
           "onUpdate called! New content after windows closed!",
@@ -33,12 +33,12 @@ function useAppStatus() {
         setregistration(registration);
         setUpdateAvailable(true);
       },
-      onSuccess: registration => {
+      onSuccess: (registration) => {
         if (ignore) return;
         console.log("onSuccess called! Offline ready!", registration);
         setregistration(registration);
         setoffLineReady(true);
-      }
+      },
     });
     console.log("serviceWorker.register called");
     return () => {
@@ -53,7 +53,7 @@ function useAppStatus() {
       return;
     }
     let ignore = false;
-    navigator.serviceWorker.getRegistration().then(currentRegistration => {
+    navigator.serviceWorker.getRegistration().then((currentRegistration) => {
       if (ignore) return;
       console.log("Current sw registration", currentRegistration);
       setregistration(currentRegistration);
